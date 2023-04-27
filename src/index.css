@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* * Importing the font from the public folder ====== Poppins ======. */
+@font-face {
+  font-family: "poppins-extraBold";
+  src: url("./fonts/Poppins/Poppins-ExtraBold.ttf");
+}
+@font-face {
+  font-family: "poppins-bold";
+  src: url("./fonts/Poppins/Poppins-Bold.ttf");
+}
+@font-face {
+  font-family: "poppins-semi";
+  src: url("./fonts/Poppins/Poppins-SemiBold.ttf");
+}
+@font-face {
+  font-family: "poppins-medium";
+  src: url("./fonts/Poppins/Poppins-Medium.ttf");
+}
+@font-face {
+  font-family: "poppins-light";
+  src: url("./fonts/Poppins/Poppins-Light.ttf");
+}
+
+body {
+  background-color: rgb(39, 41, 58);
+  color: #fff;
+}
