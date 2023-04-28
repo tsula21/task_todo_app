@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { UserContext } from "../../UserContext";
 import { Link } from "react-router-dom";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
@@ -7,16 +8,17 @@ import ApplicationTitle from "../../components/ApplicationTitle";
 import Photo from "../../assets/add_photo.svg";
 
 const AuthForm = () => {
-  const [photo, setPhoto] = useState([]);
+  const { photo, setPhoto } = useContext(UserContext);
 
   const handleInputChange = (e) => {
-    // console.log(e.target.files);
     const updateValue = {
       ...photo,
       photo: URL.createObjectURL(e.target.files[0]),
     };
-    // const updateResumeInfo = { ...photo, photo: updateValue };
     setPhoto(updateValue);
+  };
+  const handleNameInputValue = (e) => {
+    console.log(e.target.value);
   };
 
   return (
@@ -58,6 +60,7 @@ const AuthForm = () => {
                 borderRadius: "4px",
                 // "& fieldset": { border: "none", },
               }}
+              onChange={handleNameInputValue}
               InputProps={{ disableUnderline: true }}
               id="filled-basic"
               label="your name"
