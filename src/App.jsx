@@ -1,14 +1,20 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Landing from "./pages/Landing/Landing";
+import AuthForm from "./pages/Form/AuthForm";
 
 function App() {
   return (
-    <div className="App">
-      <div className="App_container">
-        <Landing />
+    <BrowserRouter>
+      <div className="App">
+        <div className="App_container">
+          <Routes>
+            <Route path="/" element={<Landing />} />
+            <Route path="/AuthForm" element={<AuthForm />} />
+          </Routes>
+        </div>
       </div>
-    </div>
+    </BrowserRouter>
   );
 }
 
