@@ -28,3 +28,7 @@ body {
   background-color: rgb(39, 41, 58);
   color: #fff;
 }
+
+.App_container {
+  width: 100%;
+}
