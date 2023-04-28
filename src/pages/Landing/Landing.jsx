@@ -16,7 +16,7 @@ const Landing = () => {
       />
       <ApplicationTitle
         Text="Keep Track Of Daily Tasks In Life"
-        className="text-[40px] text-[#fff] mb-[149px] font-[poppins-semi]"
+        className="text-[40px] text-[#fff] mb-[149px] font-[poppins-semi] mt-[33px]"
       />
       <Link to="/AuthForm">
         <Button
