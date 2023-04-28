@@ -1,11 +1,12 @@
 import React from "react";
+import TextField from "@mui/material/TextField";
 //
 import ApplicationTitle from "../../components/ApplicationTitle";
 import photo from "../../assets/add_photo.svg";
 
 const AuthForm = () => {
   return (
-    <form className="w-[588px] h-[688px] bg-[#8f8f8f] mx-[auto]">
+    <form className="w-[588px] h-[688px] bg-[#fff] mx-[auto]">
       <div className="form_container">
         <div className="flex items-center flex-col">
           <ApplicationTitle
@@ -21,6 +22,18 @@ const AuthForm = () => {
           <p className="text-[22px] text-[#000] mb-[16px] font-[poppins-light]">
             fill in you name
           </p>
+          <TextField
+            sx={{
+              backgroundColor: "#E6EBFF",
+              width: "100%",
+              borderRadius: "4px",
+              // "& fieldset": { border: "none", },
+            }}
+            InputProps={{ disableUnderline: true }}
+            id="filled-basic"
+            label="your name"
+            variant="filled"
+          />
         </div>
       </div>
     </form>
