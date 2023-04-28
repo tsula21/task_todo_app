@@ -7,6 +7,7 @@ import AuthForm from "./pages/Form/AuthForm";
 
 function App() {
   const [photo, setPhoto] = useState([]);
+  const [userName, setUserName] = useState("");
   return (
     <BrowserRouter>
       <div className="App">
@@ -15,6 +16,8 @@ function App() {
             value={{
               photo,
               setPhoto,
+              userName,
+              setUserName,
             }}
           >
             <Routes>

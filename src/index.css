@@ -42,6 +42,6 @@ body {
 
 @media (max-width: 1536px) {
   .form_container {
-    width: calc(100% - 150px);
+    width: calc(100% - 120px);
   }
 }

@@ -1,11 +1,10 @@
 import React, { useState, useContext } from "react";
 import { UserContext } from "../../UserContext";
 import { Link } from "react-router-dom";
-import TextField from "@mui/material/TextField";
-import Button from "@mui/material/Button";
 //
 import ApplicationTitle from "../../components/ApplicationTitle";
 import Photo from "../../assets/add_photo.svg";
+import PrimaryButton from "../../components/PrimaryButton";
 
 const AuthForm = () => {
   const { photo, setPhoto } = useContext(UserContext);
@@ -40,7 +39,7 @@ const AuthForm = () => {
               onChange={handleInputChange}
             />
 
-            {photo ? (
+            {photo.photo ? (
               <img src={photo.photo} alt="avatar" />
             ) : (
               <img src={Photo} alt="add_photo" />
@@ -53,37 +52,17 @@ const AuthForm = () => {
             fill in you name
           </p>
           <div className="w-full mb-[76px] 2xl:mb-[60px]">
-            <TextField
-              sx={{
-                backgroundColor: "#E6EBFF",
-                width: "100%",
-                borderRadius: "4px",
-                // "& fieldset": { border: "none", },
-              }}
+            <input
+              className="bg-[#E6EBFF] w-full rounded-[4px] h-[76px] px-[24px] py-[22px] text-[22px] text-[#000]  outline-none"
+              placeholder="your name"
+              type="text"
               onChange={handleNameInputValue}
-              InputProps={{ disableUnderline: true }}
-              id="filled-basic"
-              label="your name"
-              variant="filled"
             />
           </div>
           <Link to="/AuthForm">
-            <Button
-              sx={{
-                backgroundColor: "#5EFC8D",
-                borderRadius: "4px",
-                width: "258px",
-                height: "66px",
-                fontSize: "32px",
-                color: " #000",
-                fontFamily: "poppins-light",
-                letterSpacing: "0px",
-                "&:hover": { backgroundColor: "#3de870" },
-              }}
-              variant="contained"
-            >
+            <PrimaryButton className="bg-[#5EFC8D] hover:bg-[#3de870] transition-colors rounded-[4px] w-[258px] h-[66px] text-[32px] text-[#000] font-[poppins-light] capitalize">
               Sign In
-            </Button>
+            </PrimaryButton>
           </Link>
         </div>
       </div>

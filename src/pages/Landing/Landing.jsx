@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Button from "@mui/material/Button";
+
 //
 import Logo from "../../assets/todo_logo.svg";
 import ApplicationLogo from "../../components/ApplicationLogo";
@@ -19,24 +19,9 @@ const Landing = () => {
         className="text-[40px] text-[#fff] mb-[149px] font-[poppins-semi] mt-[33px]"
       />
       <Link to="/AuthForm">
-        <Button
-          sx={{
-            backgroundColor: "#5EFC8D",
-            borderRadius: "4px",
-            width: "388px",
-            height: "98px",
-            paddingY: "16px",
-            letterSpacing: "0px",
-            fontSize: "48px",
-            color: " #000",
-            fontFamily: "poppins-light",
-            textTransform: "capitalize",
-            "&:hover": { backgroundColor: "#3de870" },
-          }}
-          variant="contained"
-        >
+        <PrimaryButton className="bg-[#5EFC8D] hover:bg-[#3de870] transition-colors rounded-[4px] w-[388px] h-[98px] py-[16px] text-[48px] text-[#000] font-[poppins-light] capitalize">
           Get Started
-        </Button>
+        </PrimaryButton>
       </Link>
     </div>
   );
