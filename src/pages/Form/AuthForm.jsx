@@ -1,5 +1,6 @@
 import React from "react";
 import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
 //
 import ApplicationTitle from "../../components/ApplicationTitle";
 import photo from "../../assets/add_photo.svg";
@@ -27,6 +28,7 @@ const AuthForm = () => {
               backgroundColor: "#E6EBFF",
               width: "100%",
               borderRadius: "4px",
+              marginBottom: "76px",
               // "& fieldset": { border: "none", },
             }}
             InputProps={{ disableUnderline: true }}
@@ -34,6 +36,21 @@ const AuthForm = () => {
             label="your name"
             variant="filled"
           />
+          <Button
+            sx={{
+              backgroundColor: "#5EFC8D",
+              borderRadius: "4px",
+              width: "258px",
+              height: "66px",
+              fontSize: "32px",
+              color: " #000",
+              fontFamily: "poppins-light",
+              "&:hover": { backgroundColor: "#3de870" },
+            }}
+            variant="contained"
+          >
+            Sign In
+          </Button>
         </div>
       </div>
     </form>
