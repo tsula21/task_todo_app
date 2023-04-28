@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+//
 import Logo from "../../assets/todo_logo.svg";
 import ApplicationLogo from "../../components/ApplicationLogo";
 import ApplicationTitle from "../../components/ApplicationTitle";
@@ -13,12 +15,13 @@ const Landing = () => {
       />
       <ApplicationTitle
         Text="Keep Track Of Daily Tasks In Life"
-        className="text-[40px] text-[#fff] mb-[149px]"
+        className="text-[40px] text-[#fff] mb-[149px] font-[poppins-semi]"
       />
-
-      <PrimaryButton className="bg-[#5EFC8D] py-[16px] px-[59px] rounded-[4px] text-[#000] text-[48px] font-[poppins-light]">
-        Get Started
-      </PrimaryButton>
+      <Link to="/AuthForm">
+        <PrimaryButton className="bg-[#5EFC8D] py-[16px] px-[59px] rounded-[4px] text-[#000] text-[48px] font-[poppins-light]">
+          Get Started
+        </PrimaryButton>
+      </Link>
     </div>
   );
 };

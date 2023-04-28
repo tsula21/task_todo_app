@@ -31,4 +31,11 @@ body {
 
 .App_container {
   width: 100%;
+  min-height: 100vh;
+  height: 100vh;
+}
+.form_container {
+  width: calc(100% - 100px);
+  height: 100%;
+  margin: 33px auto 63px auto;
 }
