@@ -78,7 +78,7 @@ const AuthForm = () => {
               Sign In
             </PrimaryButton>
           ) : (
-            <Link to="/AuthForm">
+            <Link to="/Todo">
               <PrimaryButton
                 type="button"
                 className="bg-[#5EFC8D] hover:bg-[#000] hover:text-[#fff] transition-colors rounded-[4px] w-[258px] h-[66px] text-[32px] text-[#000] font-[poppins-light] capitalize"

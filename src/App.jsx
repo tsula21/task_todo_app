@@ -6,6 +6,7 @@ import { useFormik } from "formik";
 import { basicSchema } from "./components/validation/Validation";
 import Landing from "./pages/Landing/Landing";
 import AuthForm from "./pages/Form/AuthForm";
+import Todo from "./pages/Todo/Todo";
 
 function App() {
   const [photo, setPhoto] = useState([]);
@@ -33,6 +34,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Landing />} />
               <Route path="/AuthForm" element={<AuthForm />} />
+              <Route path="/Todo" element={<Todo />} />
             </Routes>
           </UserContext.Provider>
         </div>
