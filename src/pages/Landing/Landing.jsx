@@ -17,7 +17,7 @@ const Landing = () => {
     // GSAP;
     gsap.fromTo(
       circle.current,
-      { y: "-100%" },
+      { y: "-150%" },
       { y: 0, duration: 2, delay: 0.2 }
     );
     gsap.fromTo(
