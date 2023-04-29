@@ -7,7 +7,7 @@ import Photo from "../../assets/add_photo.svg";
 import PrimaryButton from "../../components/PrimaryButton";
 
 const AuthForm = () => {
-  const { photo, setPhoto } = useContext(UserContext);
+  const { photo, setPhoto, userName, setUserName } = useContext(UserContext);
 
   const handleInputChange = (e) => {
     const updateValue = {
@@ -17,7 +17,8 @@ const AuthForm = () => {
     setPhoto(updateValue);
   };
   const handleNameInputValue = (e) => {
-    console.log(e.target.value);
+    const name = e.target.value;
+    setUserName(name);
   };
 
   return (
