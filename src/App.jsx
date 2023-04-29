@@ -10,7 +10,6 @@ import Todo from "./pages/Todo/Todo";
 
 function App() {
   const [photo, setPhoto] = useState([]);
-  const [userName, setUserName] = useState("");
 
   const formik = useFormik({
     initialValues: {
@@ -26,8 +25,7 @@ function App() {
             value={{
               photo,
               setPhoto,
-              userName,
-              setUserName,
+
               formik,
             }}
           >

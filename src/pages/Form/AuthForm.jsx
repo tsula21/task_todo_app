@@ -50,10 +50,7 @@ const AuthForm = () => {
               <img src={Photo} alt="add_photo" />
             )}
           </div>
-          <p
-            onClick={() => console.log(formik.values.name.length)}
-            className="text-[22px] text-[#000] mb-[16px] font-[poppins-light]"
-          >
+          <p className="text-[22px] text-[#000] mb-[16px] font-[poppins-light]">
             fill in you name
           </p>
           <div className="w-full mb-[76px] 2xl:mb-[60px]">
