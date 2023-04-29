@@ -66,6 +66,7 @@ const AuthForm = () => {
               value={formik.values.name}
               onChange={formik.handleChange}
               id="name"
+              autoComplete="off"
             />
           </div>
           {/* Sign In Button */}
@@ -80,7 +81,7 @@ const AuthForm = () => {
             <Link to="/AuthForm">
               <PrimaryButton
                 type="button"
-                className="bg-[#5EFC8D] hover:bg-[#3de870] transition-colors rounded-[4px] w-[258px] h-[66px] text-[32px] text-[#000] font-[poppins-light] capitalize"
+                className="bg-[#5EFC8D] hover:bg-[#000] hover:text-[#fff] transition-colors rounded-[4px] w-[258px] h-[66px] text-[32px] text-[#000] font-[poppins-light] capitalize"
               >
                 Sign In
               </PrimaryButton>

@@ -19,7 +19,7 @@ const Landing = () => {
         className="text-[40px] text-[#fff] mb-[149px] font-[poppins-semi] mt-[33px]"
       />
       <Link to="/AuthForm">
-        <PrimaryButton className="bg-[#5EFC8D] hover:bg-[#3de870] transition-colors rounded-[4px] w-[388px] h-[98px] py-[16px] text-[48px] text-[#000] font-[poppins-light] capitalize">
+        <PrimaryButton className="bg-[#5EFC8D] hover:bg-[#fff] hover:text-[#000] transition-colors rounded-[4px] w-[388px] h-[98px] py-[16px] text-[48px] text-[#000] font-[poppins-light] capitalize">
           Get Started
         </PrimaryButton>
       </Link>
