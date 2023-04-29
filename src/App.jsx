@@ -1,16 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { UserContext } from "./UserContext";
+import { useFormik } from "formik";
 //
+import { basicSchema } from "./components/validation/Validation";
 import Landing from "./pages/Landing/Landing";
+import AuthForm from "./pages/Form/AuthForm";
 
 function App() {
+  const [photo, setPhoto] = useState([]);
+  const [userName, setUserName] = useState("");
+
+  const formik = useFormik({
+    initialValues: {
+      name: "",
+    },
+    validationSchema: basicSchema,
+  });
   return (
     <BrowserRouter>
       <div className="App">
         <div className="App_container">
-          <Routes>
-            <Route path="/" element={<Landing />} />
-          </Routes>
+          <UserContext.Provider
+            value={{
+              photo,
+              setPhoto,
+              userName,
+              setUserName,
+              formik,
+            }}
+          >
+            <Routes>
+              <Route path="/" element={<Landing />} />
+              <Route path="/AuthForm" element={<AuthForm />} />
+            </Routes>
+          </UserContext.Provider>
         </div>
       </div>
     </BrowserRouter>
