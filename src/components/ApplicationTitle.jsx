@@ -1,3 +1,7 @@
-export default function ApplicationTitle({ className, Text }) {
-  return <h1 className={className}>{Text}</h1>;
+export default function ApplicationTitle({ className, Text, headerDetails }) {
+  return (
+    <h1 className={className} ref={headerDetails}>
+      {Text}
+    </h1>
+  );
 }

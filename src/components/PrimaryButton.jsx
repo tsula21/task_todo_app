@@ -5,6 +5,7 @@ export default function PrimaryButton({
   processing,
   children,
   onClick,
+  gsap,
 }) {
   return (
     <button
@@ -12,6 +13,7 @@ export default function PrimaryButton({
       onClick={onClick}
       className={className}
       disabled={processing}
+      ref={gsap}
     >
       {children}
     </button>
