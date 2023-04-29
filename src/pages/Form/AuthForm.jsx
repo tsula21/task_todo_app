@@ -1,13 +1,16 @@
 import React, { useState, useContext } from "react";
+import * as yup from "yup";
 import { UserContext } from "../../UserContext";
 import { Link } from "react-router-dom";
+
 //
+
 import ApplicationTitle from "../../components/ApplicationTitle";
 import Photo from "../../assets/add_photo.svg";
 import PrimaryButton from "../../components/PrimaryButton";
 
 const AuthForm = () => {
-  const { photo, setPhoto, userName, setUserName } = useContext(UserContext);
+  const { photo, setPhoto, formik } = useContext(UserContext);
 
   const handleInputChange = (e) => {
     const updateValue = {
@@ -18,7 +21,7 @@ const AuthForm = () => {
   };
   const handleNameInputValue = (e) => {
     const name = e.target.value;
-    setUserName(name);
+    // setUserName(name);
   };
 
   return (
@@ -47,24 +50,41 @@ const AuthForm = () => {
             )}
           </div>
           <p
-            onClick={() => console.log(photo)}
+            onClick={() => console.log(formik.values.name.length)}
             className="text-[22px] text-[#000] mb-[16px] font-[poppins-light]"
           >
             fill in you name
           </p>
           <div className="w-full mb-[76px] 2xl:mb-[60px]">
             <input
-              className="bg-[#E6EBFF] w-full rounded-[4px] h-[76px] px-[24px] py-[22px] text-[22px] text-[#000]  outline-none"
+              className={`bg-[#E6EBFF] w-full rounded-[4px] h-[76px] px-[24px] py-[22px] text-[22px] border text-[#000]  outline-none ${
+                formik.errors.name ? "border-[red]" : ""
+              }`}
               placeholder="your name"
               type="text"
-              onChange={handleNameInputValue}
+              // onChange={handleNameInputValue}
+              value={formik.values.name}
+              onChange={formik.handleChange}
+              id="name"
             />
           </div>
-          <Link to="/AuthForm">
-            <PrimaryButton className="bg-[#5EFC8D] hover:bg-[#3de870] transition-colors rounded-[4px] w-[258px] h-[66px] text-[32px] text-[#000] font-[poppins-light] capitalize">
+          {formik.values.name.length == 0 || formik.errors.name ? (
+            <PrimaryButton
+              type="button"
+              className="bg-[#aaaaaa] cursor-default transition-colors rounded-[4px] w-[258px] h-[66px] text-[32px] text-[#000] font-[poppins-light] capitalize"
+            >
               Sign In
             </PrimaryButton>
-          </Link>
+          ) : (
+            <Link to="/AuthForm">
+              <PrimaryButton
+                type="button"
+                className="bg-[#5EFC8D] hover:bg-[#3de870] transition-colors rounded-[4px] w-[258px] h-[66px] text-[32px] text-[#000] font-[poppins-light] capitalize"
+              >
+                Sign In
+              </PrimaryButton>
+            </Link>
+          )}
         </div>
       </div>
     </form>
