@@ -19,10 +19,6 @@ const AuthForm = () => {
     };
     setPhoto(updateValue);
   };
-  const handleNameInputValue = (e) => {
-    const name = e.target.value;
-    // setUserName(name);
-  };
 
   return (
     <form className="w-[588px] h-[688px] bg-[#fff] mx-[auto] rounded-[4px] 2xl:h-[640px]">
@@ -44,7 +40,12 @@ const AuthForm = () => {
             />
 
             {photo.photo ? (
-              <img src={photo.photo} alt="avatar" />
+              <div
+                className="w-[122px] h-[122px] rounded-full bg-no-repeat bg-cover bg-center"
+                style={{
+                  backgroundImage: `url(${photo.photo})`,
+                }}
+              ></div>
             ) : (
               <img src={Photo} alt="add_photo" />
             )}
@@ -62,12 +63,12 @@ const AuthForm = () => {
               }`}
               placeholder="your name"
               type="text"
-              // onChange={handleNameInputValue}
               value={formik.values.name}
               onChange={formik.handleChange}
               id="name"
             />
           </div>
+          {/* Sign In Button */}
           {formik.values.name.length == 0 || formik.errors.name ? (
             <PrimaryButton
               type="button"
