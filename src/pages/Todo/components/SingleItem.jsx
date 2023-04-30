@@ -8,7 +8,7 @@ const SingleItem = ({ item }) => {
   const { removeTodo, completeTodo } = useContext(UserContext);
   return (
     <div
-      className={`flex items-center justify-between pl-[24px] mb-[16px] min-h-[54px]  w-full rounded-[4px] hover:scale-[1.01] transition-transform ${
+      className={`flex items-center justify-between pl-[24px] mb-[16px] min-h-[54px]  w-full rounded-[4px]  ${
         item.complete ? "#ededed" : "bg-[#000]"
       } text-[#fff] text-[22px] font-[poppins-light]`}
     >
