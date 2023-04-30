@@ -6,7 +6,7 @@ const Navbar = () => {
   const { photo, formik } = useContext(UserContext);
 
   return (
-    <nav className="flex items-center justify-between w-full px-[28px] py-[23px] bg-black">
+    <nav className="flex items-center justify-between w-full px-[15px] py-[15px] bg-black h-[98px]">
       <Link to="/">
         <p className="text-[36px] font-[poppins-extraBold] cursor-pointer">
           TO DO

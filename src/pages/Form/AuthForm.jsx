@@ -13,11 +13,22 @@ const AuthForm = () => {
   const { photo, setPhoto, formik } = useContext(UserContext);
 
   const handleInputChange = (e) => {
+    const img = e.target.files[0];
     const updateValue = {
       ...photo,
-      photo: URL.createObjectURL(e.target.files[0]),
+      photo: URL.createObjectURL(img),
     };
+
+    if (!checkImage(img)) {
+      alert("Please select a valid image file.");
+      e.target.value = null;
+      return;
+    }
     setPhoto(updateValue);
+  };
+
+  const checkImage = (file) => {
+    return file && file["type"].split("/")[0] === "image";
   };
 
   return (
@@ -37,6 +48,7 @@ const AuthForm = () => {
               type="file"
               name="upload_file"
               onChange={handleInputChange}
+              accept="image/*"
             />
 
             {photo.photo ? (

@@ -9,7 +9,7 @@ const SingleItem = ({ item }) => {
   return (
     <div
       className={`flex items-center justify-between pl-[24px] mb-[16px] min-h-[54px]  w-full rounded-[4px]  ${
-        item.complete ? "#ededed" : "bg-[#000]"
+        item.complete ? "bg-[#ededed]" : "bg-[#000]"
       } text-[#fff] text-[22px] font-[poppins-light]`}
     >
       <p className="text-[22px] text-[#fff] py-[11.5px]">{item.task}</p>
