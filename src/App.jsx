@@ -35,6 +35,10 @@ function App() {
       alert("fill field");
     }
   };
+
+  const removeTodo = (id) => {
+    setTodoList(todoList.filter((item) => item.id !== id));
+  };
   return (
     <BrowserRouter>
       <div className="App">
@@ -49,6 +53,7 @@ function App() {
               setInput,
               todoList,
               setTodoList,
+              removeTodo,
             }}
           >
             <Routes>
