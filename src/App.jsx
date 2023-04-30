@@ -19,7 +19,7 @@ function App() {
     validationSchema: basicSchema,
   });
 
-  const handleCklick = () => {
+  const addTodo = () => {
     const id = todoList.length + 1;
     if (input) {
       setTodoList((prev) => [
@@ -36,6 +36,18 @@ function App() {
     }
   };
 
+  const completeTodo = (todo) => {
+    setTodoList(
+      todoList.map((item) => {
+        if (item.id === todo) {
+          return { ...item, complete: !item.complete };
+        }
+        return item;
+      })
+    );
+    console.log("complete");
+  };
+
   const removeTodo = (id) => {
     setTodoList(todoList.filter((item) => item.id !== id));
   };
@@ -48,12 +60,13 @@ function App() {
               photo,
               setPhoto,
               formik,
-              handleCklick,
+              addTodo,
               input,
               setInput,
               todoList,
               setTodoList,
               removeTodo,
+              completeTodo,
             }}
           >
             <Routes>
