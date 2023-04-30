@@ -36,10 +36,10 @@ function App() {
     }
   };
 
-  const completeTodo = (todo) => {
+  const completeTodo = (id) => {
     setTodoList(
       todoList.map((item) => {
-        if (item.id === todo) {
+        if (item.id === id) {
           return { ...item, complete: !item.complete };
         }
         return item;
