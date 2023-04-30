@@ -15,6 +15,7 @@ function App() {
   const formik = useFormik({
     initialValues: {
       name: "",
+      img: [],
     },
     validationSchema: basicSchema,
   });
@@ -39,7 +40,6 @@ function App() {
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {
       addTodo();
-      // console.log("koko");
     }
   };
 

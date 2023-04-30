@@ -11,7 +11,7 @@ const InputField = () => {
         placeholder="my task"
         value={input}
         onChange={(e) => setInput(e.target.value)}
-        onKeyPress={(e) => handleKeyPress(e)}
+        onKeyDown={(e) => handleKeyPress(e)}
       />
       <button
         onClick={() => addTodo()}

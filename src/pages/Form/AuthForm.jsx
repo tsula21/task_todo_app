@@ -62,7 +62,10 @@ const AuthForm = () => {
               <img src={Photo} alt="add_photo" />
             )}
           </div>
-          <p className="text-[22px] text-[#000] mb-[16px] font-[poppins-light]">
+          <p
+            className="text-[22px] text-[#000] mb-[16px] font-[poppins-light]"
+            onClick={() => console.log(photo)}
+          >
             fill in you name
           </p>
           <div className="w-full mb-[76px] 2xl:mb-[60px]">
@@ -79,7 +82,7 @@ const AuthForm = () => {
             />
           </div>
           {/* Sign In Button */}
-          {formik.values.name.length == 0 || formik.errors.name ? (
+          {formik.values.name.length == 0 || formik.errors.name || photo[0] ? (
             <PrimaryButton
               type="button"
               className="bg-[#aaaaaa] cursor-default transition-colors rounded-[4px] w-[258px] h-[66px] text-[32px] text-[#000] font-[poppins-light] capitalize"
