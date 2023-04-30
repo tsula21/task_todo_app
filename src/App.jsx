@@ -10,13 +10,31 @@ import Todo from "./pages/Todo/Todo";
 
 function App() {
   const [photo, setPhoto] = useState([]);
-
+  const [input, setInput] = useState("");
+  const [todoList, setTodoList] = useState([]);
   const formik = useFormik({
     initialValues: {
       name: "",
     },
     validationSchema: basicSchema,
   });
+
+  const handleCklick = () => {
+    const id = todoList.length + 1;
+    if (input) {
+      setTodoList((prev) => [
+        ...prev,
+        {
+          id: id,
+          task: input,
+          complete: false,
+        },
+      ]);
+      setInput("");
+    } else {
+      alert("fill field");
+    }
+  };
   return (
     <BrowserRouter>
       <div className="App">
@@ -25,8 +43,12 @@ function App() {
             value={{
               photo,
               setPhoto,
-
               formik,
+              handleCklick,
+              input,
+              setInput,
+              todoList,
+              setTodoList,
             }}
           >
             <Routes>

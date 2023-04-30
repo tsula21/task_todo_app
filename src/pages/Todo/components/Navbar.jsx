@@ -4,6 +4,7 @@ import { UserContext } from "../../../UserContext";
 
 const Navbar = () => {
   const { photo, formik } = useContext(UserContext);
+
   return (
     <nav className="flex items-center justify-between w-full px-[28px] py-[23px] bg-black">
       <Link to="/">
