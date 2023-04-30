@@ -36,6 +36,13 @@ function App() {
     }
   };
 
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      addTodo();
+      // console.log("koko");
+    }
+  };
+
   const completeTodo = (id) => {
     setTodoList(
       todoList.map((item) => {
@@ -46,6 +53,10 @@ function App() {
       })
     );
     console.log("complete");
+  };
+
+  const handleKeypress = (e) => {
+    //it triggers by pressing the enter key
   };
 
   const removeTodo = (id) => {
@@ -67,6 +78,7 @@ function App() {
               setTodoList,
               removeTodo,
               completeTodo,
+              handleKeyPress,
             }}
           >
             <Routes>

@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { UserContext } from "../../../UserContext";
 
 const InputField = () => {
-  const { addTodo, input, setInput } = useContext(UserContext);
+  const { addTodo, input, setInput, handleKeyPress } = useContext(UserContext);
   return (
     <div className="mb-[51px] flex h-[76px]">
       <input
@@ -11,6 +11,7 @@ const InputField = () => {
         placeholder="my task"
         value={input}
         onChange={(e) => setInput(e.target.value)}
+        onKeyPress={(e) => handleKeyPress(e)}
       />
       <button
         onClick={() => addTodo()}
