@@ -5,8 +5,6 @@ import Navbar from "./components/Navbar";
 import ApplicationTitle from "../../components/ApplicationTitle";
 import InputField from "./components/InputField";
 import SingleItem from "./components/SingleItem";
-import TodoLogo from "../../assets/todo.jpg";
-import TodoLogo1 from "../../assets/todo1.png";
 
 const Todo = () => {
   const { todoList } = useContext(UserContext);
@@ -17,7 +15,7 @@ const Todo = () => {
         className="text-[42px] text-[#000] font-[poppins-semi] text-center mt-[35px] mb-[27px]"
         Text="Add Your Daily Tasks"
       />
-      <section className="w-[595px] mx-[auto] pb-[40px]">
+      <section className="max-w-[595px] mx-[auto] pb-[40px]">
         <InputField />
         <div className="h-[305px] overflow-y-auto overflow-x-hidden">
           {todoList &&

@@ -1,10 +1,8 @@
 import React, { useState, useContext } from "react";
-import * as yup from "yup";
 import { UserContext } from "../../UserContext";
 import { Link } from "react-router-dom";
 
 //
-
 import ApplicationTitle from "../../components/ApplicationTitle";
 import Photo from "../../assets/add_photo.svg";
 import PrimaryButton from "../../components/PrimaryButton";
@@ -14,6 +12,7 @@ const AuthForm = () => {
 
   const handleInputChange = (e) => {
     const img = e.target.files[0];
+
     const updateValue = {
       ...photo,
       photo: URL.createObjectURL(img),
@@ -82,7 +81,9 @@ const AuthForm = () => {
             />
           </div>
           {/* Sign In Button */}
-          {formik.values.name.length == 0 || formik.errors.name || photo[0] ? (
+          {formik.values.name.length == 0 ||
+          formik.errors.name ||
+          photo.length > 0 ? (
             <PrimaryButton
               type="button"
               className="bg-[#aaaaaa] cursor-default transition-colors rounded-[4px] w-[258px] h-[66px] text-[32px] text-[#000] font-[poppins-light] capitalize"
