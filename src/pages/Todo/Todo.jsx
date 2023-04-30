@@ -19,7 +19,7 @@ const Todo = () => {
       />
       <section className="w-[595px] mx-[auto] pb-[40px]">
         <InputField />
-        <div className="h-[320px] overflow-y-auto overflow-x-hidden">
+        <div className="h-[305px] overflow-y-auto overflow-x-hidden">
           {todoList &&
             todoList.map((item) => {
               return <SingleItem key={item.id} item={item} />;
