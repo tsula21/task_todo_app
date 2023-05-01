@@ -1,0 +1,78 @@
+.landing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.landing_wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+.landing_Icon {
+  cursor: pointer;
+  height: 165px;
+  margin-bottom: 46px;
+}
+
+.landing_title {
+  font-size: 54px;
+  color: #fff;
+  margin-bottom: 149px;
+  font-family: "poppins-semi";
+}
+
+.landing_button {
+  background-color: #5efc8d;
+  width: 388px;
+  height: 98px;
+  color: #000000;
+  font-size: 48px;
+  border-radius: 4px;
+  padding: 16px 0;
+  font-family: "poppins-light";
+  text-transform: capitalize;
+  transition: all 0.2s ease;
+}
+.landing_button:hover {
+  background-color: #fff;
+}
+
+// Responsive
+
+@media (max-width: 911px) {
+  .landing_title {
+    font-size: 36px;
+    margin-bottom: 90px;
+  }
+  .landing_button {
+    width: 308px;
+    height: 90px;
+    font-size: 40px;
+  }
+}
+@media (max-width: 609px) {
+  .landing_Icon {
+    height: 135px;
+  }
+  .landing_title {
+    font-size: 26px;
+    margin-bottom: 70px;
+  }
+  .landing_button {
+    width: 200px;
+    height: 60px;
+    font-size: 22px;
+  }
+
+  .landing_wrapper {
+    padding-top: unset;
+  }
+}
+@media (max-width: 435px) {
+  .landing_title {
+    font-size: 20px;
+    margin-bottom: 60px;
+  }
+}

@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { Link } from "react-router-dom";
+import "./Landing.scss";
 //
 import Logo from "../../assets/todo_logo.svg";
 import ApplicationLogo from "../../components/ApplicationLogo";
@@ -32,25 +33,20 @@ const Landing = () => {
     );
   }, []);
   return (
-    <div className="flex items-center flex-col pt-[90px] overflow-hidden">
-      <ApplicationLogo
-        Logo={Logo}
-        className="cursor-pointer h-[165px] w-[90px] mb-[46px]"
-        circle={circle}
-      />
-      <ApplicationTitle
-        Text="Keep Track Of Daily Tasks In Life"
-        className="text-[40px] text-[#fff] mb-[149px] font-[poppins-semi] mt-[33px]"
-        headerDetails={headerDetails}
-      />
-      <Link to="/AuthForm">
-        <PrimaryButton
-          className="bg-[#5EFC8D] hover:bg-[#fff] hover:text-[#000] transition-colors rounded-[4px] w-[388px] h-[98px] py-[16px] text-[48px] text-[#000] font-[poppins-light] capitalize"
-          gsap={rulesElem}
-        >
-          Get Started
-        </PrimaryButton>
-      </Link>
+    <div className="landing">
+      <div className="landing_wrapper">
+        <ApplicationLogo Logo={Logo} className="landing_Icon" circle={circle} />
+        <ApplicationTitle
+          Text="Keep Track Of Daily Tasks In Life"
+          className="landing_title "
+          headerDetails={headerDetails}
+        />
+        <Link to="/AuthForm">
+          <PrimaryButton className="landing_button" gsap={rulesElem}>
+            Get Started
+          </PrimaryButton>
+        </Link>
+      </div>
     </div>
   );
 };
