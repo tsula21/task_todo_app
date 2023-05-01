@@ -1,0 +1,137 @@
+.Todo {
+  background-color: #292c33; // need changes
+  min-height: 100vh;
+}
+.todo_title {
+  font-size: 42px;
+  color: #000;
+  font-family: "poppins-semi";
+  text-align: center;
+  margin-top: 35px;
+  margin-bottom: 27px;
+}
+.Todo section {
+  max-width: 595px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+.todolist {
+  height: 305px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+// Nav
+.Todo nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 15px 28px;
+  background: #000;
+}
+.Todo nav .logo {
+  font-family: "poppins-extraBold";
+  cursor: pointer;
+  font-size: 36px;
+}
+.Todo nav span {
+  display: flex;
+  align-items: center;
+  font-family: "poppins-light";
+}
+.Todo nav span h1 {
+  font-size: 22px;
+  color: #fff;
+  text-transform: capitalize;
+}
+.nav_avatar {
+  background-color: #e6ebff !important;
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  margin-left: 20px;
+  cursor: pointer;
+  background: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transition: all 0.2s ease;
+}
+.nav_avatar:hover {
+  transform: scale(1.07);
+}
+
+// Input field
+.input_field {
+  display: flex;
+  height: 76px;
+  margin-bottom: 51px;
+}
+.input_field input {
+  width: 100%;
+  border-start-start-radius: 4px;
+  border-end-start-radius: 4px;
+  padding-left: 24px;
+  outline: none;
+  font-size: 22px;
+  font-family: "Poppins", sans-serif;
+  background-color: #e6ebff;
+  color: #000;
+}
+.input_field button {
+  background-color: #5efc8d;
+  border-start-end-radius: 4px;
+  border-end-end-radius: 4px;
+  width: 108px;
+  font-size: 32px;
+  color: black;
+  font-family: "poppins-light";
+  transition: all 0.2s ease;
+}
+.input_field button:hover {
+  color: #fff;
+  background-color: #000;
+}
+.input_field button:active {
+  color: #fff;
+  background-color: #4a4a4a;
+}
+
+// SingleItem
+.singleitem {
+  width: 100%;
+  min-height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 4px;
+  padding-left: 24px;
+  margin-bottom: 16px;
+  color: #fff;
+  font-size: 22px;
+  font-family: "poppins-light";
+}
+.singleitem .task {
+  font-size: 22px;
+  color: #fff;
+  padding: 11.5px 0;
+}
+.singleitem_btns {
+  border-radius: 4px;
+  height: 54px;
+  width: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+@media (max-width: 636px) {
+  .Todo section {
+    max-width: calc(100% - 50px);
+  }
+  .todo_title {
+    font-size: 28px;
+  }
+}
