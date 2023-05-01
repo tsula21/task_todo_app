@@ -38,6 +38,7 @@ const AuthForm = () => {
             <ApplicationTitle Text="Get Started" className="auth_form_title" />
             <p className="auth_form_subtitle">add a photo</p>
             <div className="auth_photo_frame">
+              {/* This is an input field that allows the user to select an image file from their device. */}
               <input
                 className="auth_photo_input"
                 type="file"
@@ -64,6 +65,7 @@ const AuthForm = () => {
               fill in you name
             </p>
             <div className="auth_name_input_wrapper">
+              {/* Input for user name */}
               <input
                 className={`auth_name_input border  ${
                   formik.errors.name ? "border-[red]" : ""
