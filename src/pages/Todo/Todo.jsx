@@ -5,19 +5,17 @@ import Navbar from "./components/Navbar";
 import ApplicationTitle from "../../components/ApplicationTitle";
 import InputField from "./components/InputField";
 import SingleItem from "./components/SingleItem";
+import "./Todo.scss";
 
 const Todo = () => {
   const { todoList } = useContext(UserContext);
   return (
-    <div className="bg-[#292c33] min-h-screen">
+    <div className="Todo">
       <Navbar />
-      <ApplicationTitle
-        className="text-[42px] text-[#000] font-[poppins-semi] text-center mt-[35px] mb-[27px]"
-        Text="Add Your Daily Tasks"
-      />
-      <section className="max-w-[595px] mx-[auto] pb-[40px]">
+      <ApplicationTitle className="todo_title" Text="Add Your Daily Tasks" />
+      <section>
         <InputField />
-        <div className="h-[305px] overflow-y-auto overflow-x-hidden">
+        <div className="todolist">
           {todoList &&
             todoList.map((item) => {
               return <SingleItem key={item.id} item={item} />;

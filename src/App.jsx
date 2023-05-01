@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { UserContext } from "./UserContext";
 import { useFormik } from "formik";
 //
@@ -8,14 +8,20 @@ import Landing from "./pages/Landing/Landing";
 import AuthForm from "./pages/Form/AuthForm";
 import Todo from "./pages/Todo/Todo";
 
+// LocalStorage
+const photoLocal = JSON.parse(localStorage.getItem("photo") || "[]");
+const nameLocal = JSON.parse(localStorage.getItem("name") || "[]");
+const nameTodos = JSON.parse(localStorage.getItem("todo") || "[]");
+
 function App() {
-  const [photo, setPhoto] = useState([]);
+  const [photo, setPhoto] = useState(photoLocal);
   const [input, setInput] = useState("");
-  const [todoList, setTodoList] = useState([]);
+  const [todoList, setTodoList] = useState(nameTodos);
+  const [isRegistered, setIsRegistered] = useState(false);
+
   const formik = useFormik({
     initialValues: {
-      name: "",
-      img: [],
+      name: nameLocal,
     },
     validationSchema: basicSchema,
   });
@@ -55,13 +61,15 @@ function App() {
     console.log("complete");
   };
 
-  const handleKeypress = (e) => {
-    //it triggers by pressing the enter key
-  };
-
   const removeTodo = (id) => {
     setTodoList(todoList.filter((item) => item.id !== id));
   };
+
+  useEffect(() => {
+    localStorage.setItem("photo", JSON.stringify(photo));
+    localStorage.setItem("name", JSON.stringify(formik.values.name));
+    localStorage.setItem("todo", JSON.stringify(todoList));
+  }, [photo, formik.values.name, todoList]);
   return (
     <BrowserRouter>
       <div className="App">
@@ -79,11 +87,18 @@ function App() {
               removeTodo,
               completeTodo,
               handleKeyPress,
+              isRegistered,
+              setIsRegistered,
             }}
           >
             <Routes>
-              <Route path="/" element={<Landing />} />
-              <Route path="/AuthForm" element={<AuthForm />} />
+              <Route exact path="/" element={<Landing />} />
+              {/* Redirect registered user */}
+              {isRegistered ? (
+                <Route path="/AuthForm" element={<Navigate to="/Todo" />} />
+              ) : (
+                <Route path="/AuthForm" element={<AuthForm />} />
+              )}
               <Route path="/Todo" element={<Todo />} />
             </Routes>
           </UserContext.Provider>

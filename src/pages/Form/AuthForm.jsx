@@ -8,7 +8,7 @@ import Photo from "../../assets/add_photo.svg";
 import PrimaryButton from "../../components/PrimaryButton";
 
 const AuthForm = () => {
-  const { photo, setPhoto, formik } = useContext(UserContext);
+  const { photo, setPhoto, formik, setIsRegistered } = useContext(UserContext);
 
   const handleInputChange = (e) => {
     const img = e.target.files[0];
@@ -81,12 +81,12 @@ const AuthForm = () => {
             {/* Sign In Button */}
             {formik.values.name.length == 0 ||
             formik.errors.name ||
-            photo.length > 0 ? (
+            photo[0] > 0 ? (
               <PrimaryButton type="button" className="auth_button active">
                 Sign In
               </PrimaryButton>
             ) : (
-              <Link to="/Todo">
+              <Link to="/Todo" onClick={() => setIsRegistered(true)}>
                 <PrimaryButton type="button" className="auth_button">
                   Sign In
                 </PrimaryButton>
