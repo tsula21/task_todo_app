@@ -1,4 +1,5 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useRef } from "react";
+import gsap from "gsap";
 //
 import { UserContext } from "../../UserContext";
 import Navbar from "./components/Navbar";
@@ -9,11 +10,32 @@ import "./Todo.scss";
 
 const Todo = () => {
   const { todoList } = useContext(UserContext);
+
+  let title = useRef(null);
+  let todoContent = useRef(null);
+
+  useEffect(() => {
+    // GSAP;
+    gsap.fromTo(
+      title.current,
+      { opacity: 0 },
+      { opacity: 1, duration: 2, delay: 1.4 }
+    );
+    gsap.fromTo(
+      todoContent.current,
+      { opacity: 0 },
+      { opacity: 1, duration: 2, delay: 1.8 }
+    );
+  }, []);
   return (
     <div className="Todo">
       <Navbar />
-      <ApplicationTitle className="todo_title" Text="Add Your Daily Tasks" />
-      <section>
+      <ApplicationTitle
+        headerDetails={title}
+        className="todo_title"
+        Text="Add Your Daily Tasks"
+      />
+      <section ref={todoContent}>
         <InputField />
         <div className="todolist">
           {todoList &&

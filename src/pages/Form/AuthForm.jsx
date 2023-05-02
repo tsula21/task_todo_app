@@ -1,6 +1,7 @@
-import React, { useState, useContext } from "react";
-import { UserContext } from "../../UserContext";
+import React, { useState, useContext, useEffect, useRef } from "react";
+import gsap from "gsap";
 import { Link } from "react-router-dom";
+import { UserContext } from "../../UserContext";
 import "./AuthForm.scss";
 //
 import ApplicationTitle from "../../components/ApplicationTitle";
@@ -30,9 +31,21 @@ const AuthForm = () => {
     return file && file["type"].split("/")[0] === "image";
   };
 
+  let formAnimation = useRef(null);
+
+  useEffect(() => {
+    // GSAP;
+    gsap.fromTo(
+      formAnimation.current,
+
+      { opacity: 0 },
+      { opacity: 1, duration: 1.2, delay: 0.2 }
+    );
+  }, []);
+
   return (
     <div className="auth_form">
-      <form>
+      <form ref={formAnimation}>
         <div className="form_container">
           <div className="flex items-center flex-col">
             <ApplicationTitle Text="Get Started" className="auth_form_title" />
@@ -79,9 +92,7 @@ const AuthForm = () => {
               />
             </div>
             {/* Sign In Button */}
-            {formik.values.name.length == 0 ||
-            formik.errors.name ||
-            photo[0] > 0 ? (
+            {formik.values.name.length == 0 || formik.errors.name ? (
               <PrimaryButton type="button" className="auth_button active">
                 Sign In
               </PrimaryButton>

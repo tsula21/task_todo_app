@@ -35,7 +35,7 @@ const Landing = () => {
   return (
     <div className="landing">
       <div className="landing_wrapper">
-        <ApplicationLogo Logo={Logo} className="landing_Icon" circle={circle} />
+        <ApplicationLogo Logo={Logo} className="landing_Icon" gsap={circle} />
         <ApplicationTitle
           Text="Keep Track Of Daily Tasks In Life"
           className="landing_title "
