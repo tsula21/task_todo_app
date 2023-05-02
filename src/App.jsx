@@ -116,12 +116,10 @@ function App() {
                 <Route path="/AuthForm" element={<AuthForm />} />
               )}
               {isRegistered ? (
-                <Route path="/Todo" element={<Todo />} />
+                <Route path={`/Todo${formik.values.name}`} element={<Todo />} />
               ) : (
                 <Route path="/Todo" element={<Navigate to="/AuthForm" />} />
               )}
-
-              {/* <Route path="/Todo" element={<Todo />} /> */}
             </Routes>
           </UserContext.Provider>
         </div>
