@@ -99,6 +99,7 @@
 
 // SingleItem
 .singleitem {
+  line-break: anywhere;
   width: 100%;
   min-height: 54px;
   display: flex;
@@ -115,6 +116,7 @@
   font-size: 22px;
   color: #fff;
   padding: 11.5px 0;
+  margin-right: 5px;
 }
 .singleitem_btns {
   border-radius: 4px;
