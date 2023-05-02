@@ -116,7 +116,7 @@ function App() {
                 <Route path="/AuthForm" element={<AuthForm />} />
               )}
               {isRegistered ? (
-                <Route path={`/Todo${formik.values.name}`} element={<Todo />} />
+                <Route path="/Todo" element={<Todo />} />
               ) : (
                 <Route path="/Todo" element={<Navigate to="/AuthForm" />} />
               )}
