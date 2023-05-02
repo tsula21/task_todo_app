@@ -75,7 +75,7 @@ const AuthForm = () => {
               className="auth_form_subtitle2"
               onClick={() => console.log(photo)}
             >
-              fill in you name
+              fill in your name
             </p>
             <div className="auth_name_input_wrapper">
               {/* Input for user name */}
