@@ -12,8 +12,11 @@
   "dependencies": {
     "formik": "^2.2.9",
     "gsap": "^3.11.5",
+    "intro.js": "^7.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-intro.js": "^1.0.0",
+    "react-joyride": "^2.5.4",
     "react-router-dom": "^6.10.0",
     "sass": "^1.62.1",
     "yup": "^1.1.1"
